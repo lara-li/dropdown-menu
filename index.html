@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revised Drop Down</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            transition: all .4s ease-in-out;
+        }
+        
+
+        ul.navbar {
+            margin-top: 1rem;
+            font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            min-width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1rem 1.2rem;
+            color: #fff;
+            width:200px;
+            
+            
+        }
+
+        .link-hover {
+            position: relative;
+
+        }
+
+        li:nth-of-type(1) {
+            background-color: rgb(165, 94, 94);
+        }
+
+        li:nth-of-type(2) {
+            background-color: rgb(165, 96, 99);
+        }
+
+        li:nth-of-type(3) {
+            background-color: rgb(165, 101, 101);
+        }
+
+        li:nth-of-type(4) {
+            background-color: rgb(165, 108, 105);
+        }
+
+        ul a:hover {
+            background: rgba(10, 10, 10, 0.2);
+        }
+
+        .drop-down {
+            position: absolute;
+            top: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .2s ease;
+            z-index: 1;
+            width: 100%;
+            font-size: 92%;
+            
+
+        }
+
+        .drop-down_2 {
+            top: 0;
+            left: 100%;
+        }
+
+        .drop-down_3 {
+            top: 0;
+            left: 100%;
+        }
+
+        .link-hover:hover>.drop-down {
+            opacity: 1;
+            pointer-events: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a class="nav-link" href="/">Home</a></li>
+            <li><a class="nav-link" href="/">Contact Me</a></li>
+            <li class="link-hover"><a class="nav-link" href="/">Projects</a>
+                <ul class="drop-down">
+                    <li><a class="nav-link" href="/">Technical Documentation Page</a></li>
+                    <li class="link-hover"><a class="nav-link " href="/">Travel Page</a>
+                        <ul class="drop-down drop-down_2">
+                            <li><a class="nav-link" href="/">Technical Documentation Page</a></li>
+                            <li><a class="nav-link" href="/">Travel Page</a></li>
+                            <li><a class="nav-link" href="/">Product Landing Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="link-hover"><a class="nav-link " href="/">Product Landing Page</a>
+                        <ul class="drop-down drop-down_3">
+                            <li><a class="nav-link" href="/">Technical Documentation Page</a></li>
+                            <li><a class="nav-link" href="/">Travel Page</a></li>
+                            <li><a class="nav-link" href="/">Product Landing Page</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="nav-link" href="/">About Me</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
